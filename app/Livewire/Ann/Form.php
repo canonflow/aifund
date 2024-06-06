@@ -43,11 +43,12 @@ class Form extends Component
 
     public function calculate()
     {
+//        $this->form->output = ActivationFunction::exportFunction($this->form->type);
         $this->form->output = LearningType::calculate(
             $this->form->type,
             $this->form->initial,
             $this->form->tables,
-            ActivationFunction::exportFunction($this->form->type),
+            ActivationFunction::exportFunction($this->form->activation),
             $this->form->learningRate
         );
     }

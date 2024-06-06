@@ -12,22 +12,22 @@ enum ActivationFunction : string {
     {
         $func = null;
         switch ($type) {
-            case ActivationFunction::BINARY_HARD:
+            case ActivationFunction::BINARY_HARD->value:
                 $func = function ($net) {
                     return ($net <= 0) ? 0 : 1;
                 };
                 break;
-            case ActivationFunction::BINARY_THRESH:
+            case ActivationFunction::BINARY_THRESH->value:
                 $func = function ($net) use ($threshold) {
                     return ($net < $threshold) ? 0 : 1;
                 };
                 break;
-            case ActivationFunction::BIPOLAR_HARD:
+            case ActivationFunction::BIPOLAR_HARD->value:
                 $func = function ($net) {
                     return ($net < 0) ? -1 : (($net == 0) ? 0 : 1);
                 };
                 break;
-            case ActivationFunction::BIPOLAR_THRESH:
+            case ActivationFunction::BIPOLAR_THRESH->value:
                 $func = function ($net) use ($threshold){
                     return ($net < $threshold) ? -1 : 1;
                 };
