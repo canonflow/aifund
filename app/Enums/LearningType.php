@@ -32,10 +32,11 @@ enum LearningType : string {
                 while (!$isStop || $cnt < 100) {
                     for ($row = 0; $row < $rows; $row++) {
                         // Hitung NET
-                        $net = $prevValue[$cols - 1];
+                        $net = $initialValue[$cols - 1];
                         $target = $tables[$row][$cols - 1];
+                        $targets[] = $target;
                         for ($col = 0; $col < $cols - 1; $col++) {
-                            $net += $tables[$row][$col] + $prevValue[$col];
+                            $net += $tables[$row][$col] * $initialValue[$col];
                         }
 
                         // Hitung Output dengan Activation Function
@@ -73,10 +74,10 @@ enum LearningType : string {
                 while (!$isStop || $cnt < 100) {
                     for ($row = 0; $row < $rows; $row++) {
                         // Hitung NET
-                        $net = $prevValue[$cols - 1];
+                        $net = $initialValue[$cols - 1];
                         $target = $tables[$row][$cols - 1];
                         for ($col = 0; $col < $cols - 1; $col++) {
-                            $net += $tables[$row][$col] + $prevValue[$col];
+                            $net += $tables[$row][$col] * $initialValue[$col];
                         }
 
                         // Hitung Output dengan Activation Function

@@ -13,7 +13,7 @@ class AnnForm extends Form
 {
     public $type = LearningType::HEBB->value;
     #[Rule('min:2|numeric')]
-    public $rows = 3;
+    public $rows = 2;
     #[Rule('min:2|numeric')]
     public $cols = 3;
 
@@ -21,7 +21,6 @@ class AnnForm extends Form
     public $tables = [
         [0, 0, 0],
         [0, 0, 0],
-        [0, 0, 0]
     ];
 
     // Initial

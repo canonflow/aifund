@@ -48,8 +48,10 @@ class Form extends Component
             $this->form->type,
             $this->form->initial,
             $this->form->tables,
-            ActivationFunction::exportFunction($this->form->activation),
+            ActivationFunction::exportFunction($this->form->activation, $this->form->threshold),
             $this->form->learningRate
         );
+//        $func = ActivationFunction::exportFunction($this->form->activation, $this->form->threshold);
+//        $this->test = $func(5);
     }
 }
